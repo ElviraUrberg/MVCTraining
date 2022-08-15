@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Category>
+﻿@model IEnumerable<FieldSurvey>
 @{
     ViewData["Title"] = "Index";
 }
@@ -26,10 +26,13 @@
     <tbody>
         @foreach(var obj in Model)
         {
-            <tr>
+            @*<tr>
                 <td width="50%">@obj.Name</td>
                 <td width="30%">@obj.DisplayOrder</td>
             </tr>
+            <td>
+                <a><i class="bi bi-pencil-square"></i>Edit</a>
+            </td>*@
         }
     </tbody>
 </table>
