@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
-using static MVCTraining.Data.ApplicationDbcontext;
+using MVCTraining.Data;
+using MVCTraining.Utility;
 
 namespace MVCTraining
 {
@@ -47,8 +48,18 @@ namespace MVCTraining
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapRazorPages();
+                endpoints.MapControllerRoute(
+                name: "default",
+                pattern: "{controller=Home}/{action=Index}/{id?}");
+
+                UtilityImporter.Use(endpoints);
             });
+        }
+
+        public static void RegisterRoutes(RouteCollection routes)
+        {
+            //routes.IgnoreRoute();
+
         }
     }
 }

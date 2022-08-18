@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace MVCTraining.Migrations
 {
-    [DbContext(typeof(ApplicationDbcontext.ApplicationDbContext))]
+    [DbContext(typeof(ApplicationDbContext))]
     partial class ApplicationDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
@@ -38,7 +38,6 @@ namespace MVCTraining.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Comment")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<double>("Latitude")
@@ -48,7 +47,6 @@ namespace MVCTraining.Migrations
                         .HasColumnType("float");
 
                     b.Property<string>("Photopath")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Service")
@@ -56,7 +54,6 @@ namespace MVCTraining.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Status")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");

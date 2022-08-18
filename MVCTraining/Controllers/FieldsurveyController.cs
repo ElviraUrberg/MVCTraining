@@ -5,10 +5,10 @@ using static MVCTraining.Data.ApplicationDbContext;
 
 namespace MVCTraining.Controllers
 {
-    public class CategoryController : Controller
+    public class FieldsurveyController : Controller
     {
         private readonly ApplicationDbContext _db;
-        public CategoryController(ApplicationDbContext db)
+        public FieldsurveyController(ApplicationDbContext db)
         {
             _db = db;
         }

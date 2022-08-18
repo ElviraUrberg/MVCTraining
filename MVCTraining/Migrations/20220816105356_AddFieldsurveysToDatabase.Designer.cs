@@ -10,9 +10,9 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace MVCTraining.Migrations
 {
-    [DbContext(typeof(ApplicationDbcontext.ApplicationDbContext))]
-    [Migration("20220815210607_initial")]
-    partial class initial
+    [DbContext(typeof(ApplicationDbContext))]
+    [Migration("20220816105356_AddFieldsurveysToDatabase")]
+    partial class AddFieldsurveysToDatabase
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

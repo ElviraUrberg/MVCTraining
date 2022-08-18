@@ -43,7 +43,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using static MVCTraining.Data.ApplicationDbcontext;
+using static MVCTraining.Data.ApplicationDbContext;
 
 namespace MVCTraining
 {
