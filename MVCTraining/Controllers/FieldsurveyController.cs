@@ -56,13 +56,14 @@ namespace MVCTraining.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Edit(FieldSurvey obj)
         {
-            //if (obj.Name == obj.DisplayOrder.ToString())
-            //{
-            //    ModelState.AddModelError("name", "The DisplayOrder cannot exactly match the Name");
-            //}
             if (ModelState.IsValid)
             {
-                //_db.Categories.Add(obj);
+                var fieldsurvey = _db.FieldSurveys.Find(obj.Id);
+                fieldsurvey.Service = obj.Service;
+                fieldsurvey.Category = obj.Category;
+                fieldsurvey.Area = obj.Area;
+                fieldsurvey.Photopath = obj.Photopath;
+                fieldsurvey.Comment = obj.Comment;                
                 _db.SaveChanges();
                 return RedirectToAction("Index");
             }

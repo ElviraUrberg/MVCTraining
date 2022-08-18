@@ -36,8 +36,18 @@
             <input asp-for="Comment" class="form-control" />
             <span asp-validation-for="Comment" class="text-danger"></span>
         </div>
+        <div class="mb-3">
+            <label asp-for="Latitude"></label>
+            <input asp-for="Latitude" class="form-control" disabled="true"/>
+            <span asp-validation-for="Latitude" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Longitude"></label>
+            <input asp-for="Longitude" class="form-control" disabled="true"/>
+            <span asp-validation-for="Longitude" class="text-danger"></span>
+        </div>
         <button type="submit" class="btn btn-primary" style="width:150px">Update</button>
-        <a asp-controller="Category" asp-action="Index" class="btn btn-secondary" style="width:150px">
+        <a asp-controller="FieldSurvey" asp-action="Index" class="btn btn-secondary" style="width:150px">
             Back To List
         </a>
     </div>

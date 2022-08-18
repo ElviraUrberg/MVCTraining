@@ -15,7 +15,7 @@ namespace MVCTraining.Data
 
         private static void SeedFieldsurveys(ApplicationDbContext dbContext)
         {
-            if (!dbContext.FieldSurveys.Any(r => r.Area == "Norrköping"))
+            if (!dbContext.FieldSurveys.Any(r => r.Category == "Skadat räcke" && r.Latitude == 58.5535 && r.Longitude == 16.2410))
             {
                 dbContext.FieldSurveys.Add(new FieldSurvey
                 {
@@ -30,7 +30,7 @@ namespace MVCTraining.Data
                 });
             }
 
-            if (!dbContext.FieldSurveys.Any(r => r.Area == "Söderköping"))
+            if (!dbContext.FieldSurveys.Any(r => r.Category == "Ojämn väg" && r.Latitude == 58.4931 && r.Longitude == 16.3064))
             {
                 dbContext.FieldSurveys.Add(new FieldSurvey
                 {

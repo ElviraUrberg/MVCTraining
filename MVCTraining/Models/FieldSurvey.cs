@@ -4,6 +4,7 @@ namespace MVCTraining.Models
 {
     public class FieldSurvey
     {
+        [Key]
         public int Id { get; set; }
 
         [Required]

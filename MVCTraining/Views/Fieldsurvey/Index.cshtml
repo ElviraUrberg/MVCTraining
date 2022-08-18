@@ -40,7 +40,8 @@
                 <td class="text-center"><img src="@obj.Photopath" width=100/></td>
                 <td>
                     <div class="w-75 btn-group" role="group">
-                        <a asp-controller="Fieldsurvey"><i class="bi bi-pencil-square"></i>Edit</a>
+                        <a asp-controller="Fieldsurvey" asp-action="Edit" asp-route-id="@obj.Id"
+                        class="btn btn-primary mx-2"><i class="bi bi-pencil-square"></i>Edit</a>
                     </div>
                 </td>
             </tr>            
