@@ -19,6 +19,8 @@
 
   <ItemGroup>
     <Folder Include="Migrations\" />
+    <Folder Include="Interfaces\" />
+    <Folder Include="Services\" />
     <Folder Include="Utility\Controllers\" />
   </ItemGroup>
 

@@ -6,25 +6,34 @@
             <h2 class="text-primary">Create Fieldsurvey</h2>
             <hr />
         </div>
+        <select asp-for="Service" class="form-select mb-3" aria-label="Välj tjänst">
+            <option selected>Välj tjänst</option>
+            <option>Felanmälan</option>
+            <option>Besiktning</option>
+            <option>Demo</option>
+        </select>
+        <select asp-for="Area" class="form-select mb-3" aria-label="Välj område">
+            <option selected>Välj område</option>
+            <option>Norrköping</option>
+            <option>Söderköping</option>
+            <option>Linköping</option>
+        </select>
+        <select asp-for="Category" class="form-select mb-3" aria-label="Välj typ">
+            <option selected>Välj typ</option>
+            <option>Skadat räcke</option>
+            <option>Ojämn väg</option>
+            <option>Saknad skylt</option>
+            <option>Dålig vägmarkering</option>
+        </select>
+        <select asp-for="Status" class="form-select mb-3" aria-label="Välj status">
+            <option selected>Välj status</option>
+            <option>Ladda upp som ny</option>
+            <option>Ladda upp som publicerad</option>
+        </select>
         <div class="mb-3">
-            <label asp-for="Service"></label>
-            <input asp-for="Service" class="form-control" />
-            <span asp-validation-for="Service" class="text-danger"></span>
-        </div>
-        <div class="mb-3">
-            <label asp-for="Area"></label>
-            <input asp-for="Area" class="form-control" />
-            <span asp-validation-for="Area" class="text-danger"></span>
-        </div>
-        <div class="mb-3">
-            <label asp-for="Category"></label>
-            <input asp-for="Category" class="form-control" />
-            <span asp-validation-for="Category" class="text-danger"></span>
-        </div>
-        <div class="mb-3">
-            <label asp-for="Status"></label>
-            <input asp-for="Status" class="form-control" />
-            <span asp-validation-for="Status" class="text-danger"></span>
+            <label asp-for="Photopath"></label>
+            <input asp-for="Photopath" class="form-control" />
+            <span asp-validation-for="Photopath" class="text-danger"></span>
         </div>
         <div class="mb-3">
             <label asp-for="Photopath"></label>
