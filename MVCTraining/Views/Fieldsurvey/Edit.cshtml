@@ -3,7 +3,7 @@
 <form method="post" asp-action="Edit">
     <div class="border p-3 mt-4">
         <div class="row pb-2">
-            <h2 class="text-primary">Create Fieldsurvey</h2>
+            <h2 class="text-primary">Redigera Objekt</h2>
             <hr />
         </div>
         <select asp-for="Service" class="form-select mb-3" aria-label="Välj tjänst">
@@ -35,7 +35,7 @@
             <input asp-for="Photopath" class="form-control" />
             <span asp-validation-for="Photopath" class="text-danger"></span>
         </div>
-        <button onclick="PickImage()" class="btn btn-primary" style="width:150px">Välj bild</button>
+
         <div class="mb-3">
             <label asp-for="Comment"></label>
             <input asp-for="Comment" class="form-control" />
@@ -43,12 +43,12 @@
         </div>
         <div class="mb-3">
             <label asp-for="Latitude"></label>
-            <input asp-for="Latitude" class="form-control" disabled="true"/>
+            <input asp-for="Latitude" class="form-control"/>
             <span asp-validation-for="Latitude" class="text-danger"></span>
         </div>
         <div class="mb-3">
             <label asp-for="Longitude"></label>
-            <input asp-for="Longitude" class="form-control" disabled="true"/>
+            <input asp-for="Longitude" class="form-control"/>
             <span asp-validation-for="Longitude" class="text-danger"></span>
         </div>
         <button type="submit" class="btn btn-primary" style="width:150px">Update</button>

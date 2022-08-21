@@ -1,0 +1,55 @@
+﻿@model FieldSurvey
+
+<form method="post" asp-action="DeletePOST">
+    <input asp-for="Id" hidden="true"/>
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">Radera Objekt</h2>
+            <hr />
+        </div>
+        <div class="mb-3">
+            <label asp-for="Service"></label>
+            <input asp-for="Service" class="form-control" disabled="true"/>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Area"></label>
+            <input asp-for="Area" class="form-control" disabled="true"/>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Category"></label>
+            <input asp-for="Category" class="form-control" disabled="true"/>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Status"></label>
+            <input asp-for="Status" class="form-control" disabled="true"/>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Photopath"></label>
+            <input asp-for="Photopath" class="form-control" disabled="true"/>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Comment"></label>
+            <input asp-for="Comment" class="form-control" disabled="true"/>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Latitude"></label>
+            <input asp-for="Latitude" class="form-control" disabled="true"/>
+            <span asp-validation-for="Latitude" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Longitude"></label>
+            <input asp-for="Longitude" class="form-control" disabled="true"/>
+            <span asp-validation-for="Longitude" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-danger" style="width:150px">Radera</button>
+        <a asp-controller="FieldSurvey" asp-action="Index" class="btn btn-secondary" style="width:150px">
+            Back To List
+        </a>
+    </div>
+</form>
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}

@@ -58,7 +58,7 @@ namespace MVCTraining.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("FieldSurveys");
+                    b.ToTable("FieldSurveys", (string)null);
                 });
 #pragma warning restore 612, 618
         }

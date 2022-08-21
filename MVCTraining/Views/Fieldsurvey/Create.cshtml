@@ -3,7 +3,7 @@
 <form method="post">
     <div class="border p-3 mt-4">
         <div class="row pb-2">
-            <h2 class="text-primary">Create Fieldsurvey</h2>
+            <h2 class="text-primary">Skapa Nytt Objekt</h2>
             <hr />
         </div>
         <select asp-for="Service" class="form-select mb-3" aria-label="Välj tjänst">
@@ -36,17 +36,22 @@
             <span asp-validation-for="Photopath" class="text-danger"></span>
         </div>
         <div class="mb-3">
-            <label asp-for="Photopath"></label>
-            <input asp-for="Photopath" class="form-control" />
-            <span asp-validation-for="Photopath" class="text-danger"></span>
-        </div>
-        <div class="mb-3">
             <label asp-for="Comment"></label>
             <input asp-for="Comment" class="form-control" />
             <span asp-validation-for="Comment" class="text-danger"></span>
         </div>
-        <button type="submit" class="btn btn-primary" style="width:150px">Create</button>
-        <a asp-controller="Category" asp-action="Index" class="btn btn-secondary" style="width:150px">
+        <div class="mb-3">
+            <label asp-for="Latitude"></label>
+            <input asp-for="Latitude" class="form-control"/>
+            <span asp-validation-for="Latitude" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Longitude"></label>
+            <input asp-for="Longitude" class="form-control"/>
+            <span asp-validation-for="Longitude" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:150px">Skapa</button>
+        <a asp-controller="Fieldsurvey" asp-action="Index" class="btn btn-secondary" style="width:150px">
             Back To List
         </a>
     </div>

@@ -6,11 +6,11 @@
 <div class="container p-3">
     <div class="row pt-4">
         <div class="col-6">
-            <h2 class="text-primary">Category List</h2>
+            <h2 class="text-primary">Objekt Från Databasen</h2>
         </div>
         <div class="col-6 text-end">
             <a asp-controller="Fieldsurvey" asp-action="Create" class="btn btn-primary">
-                <i class="bi bi-plus-circle"></i> &nbsp; Create New Category
+                <i class="bi bi-plus-circle"></i> &nbsp; Skapa Nytt Objekt
             </a>
         </div>
     </div>
@@ -19,29 +19,31 @@
 <table class="table table-bordered table-striped" style="width:100%">
     <thead>
         <tr>
-            <th>Tjänst</th>
-            <th>Area</th>
-            <th>Typ</th>
-            <th>Kommentar</th>
-            <th>Koordinater</th>
-            <th>Bild</th>
-            <th></th>
+            <th class="text-center align-middle">Tjänst</th>
+            <th class="text-center align-middle">Area</th>
+            <th class="text-center align-middle">Typ</th>
+            <th class="text-center align-middle">Kommentar</th>
+            <th class="text-center align-middle">Koordinater</th>
+            <th class="text-center align-middle">Bild</th>
+            <th class="text-center align-middle">Ändra</th>
         </tr>
     </thead>
     <tbody>
         @foreach(var obj in Model)
         {
             <tr>
-                <td class="text-center justify-content-center">@obj.Service</td>
-                <td class="text-center">@obj.Area</td>
-                <td class="text-center">@obj.Category</td>
-                <td class="text-center">@obj.Comment</td>
-                <td class="text-center">@obj.Latitude, @obj.Longitude</td>
-                <td class="text-center"><img src="@obj.Photopath" width=100/></td>
-                <td>
-                    <div class="w-75 btn-group" role="group">
+                <td class="text-center align-middle">@obj.Service</td>
+                <td class="text-center align-middle">@obj.Area</td>
+                <td class="text-center align-middle">@obj.Category</td>
+                <td class="text-center align-middle">@obj.Comment</td>
+                <td class="text-center align-middle">@obj.Latitude, @obj.Longitude</td>
+                <td class="text-center align-middle"><img src="@obj.Photopath" width=100/></td>
+                <td class="align-middle">
+                    <div class="w-75 btn-group mx-auto d-block" role="group">
                         <a asp-controller="Fieldsurvey" asp-action="Edit" asp-route-id="@obj.Id"
-                        class="btn btn-primary mx-2"><i class="bi bi-pencil-square"></i>Edit</a>
+                        class="btn btn-primary mx-2"><i class="bi bi-pencil-square"></i>Redigera</a>
+                        <a asp-controller="Fieldsurvey" asp-action="Delete" asp-route-id="@obj.Id"
+                        class="btn btn-danger mx-2"><i class="bi bi-thrash-fill"></i>Radera</a>
                     </div>
                 </td>
             </tr>            

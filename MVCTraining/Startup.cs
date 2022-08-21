@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using MVCTraining.Data;
+using MVCTraining.Interfaces;
+using MVCTraining.Services;
 using MVCTraining.Utility;
 
 namespace MVCTraining
@@ -16,12 +18,11 @@ namespace MVCTraining
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            //lägg till 2 using
             services.AddDbContext<ApplicationDbContext>(
                 options => options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection"))
             );
-
+            services.AddScoped<IFileExplorerService, FileExplorerService>();
             services.AddRazorPages();
         }
 
@@ -44,7 +45,7 @@ namespace MVCTraining
 
             app.UseRouting();
 
-            app.UseAuthorization();
+            app.UseAuthorization();            
 
             app.UseEndpoints(endpoints =>
             {
@@ -54,12 +55,6 @@ namespace MVCTraining
 
                 UtilityImporter.Use(endpoints);
             });
-        }
-
-        public static void RegisterRoutes(RouteCollection routes)
-        {
-            //routes.IgnoreRoute();
-
         }
     }
 }
