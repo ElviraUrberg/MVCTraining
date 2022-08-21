@@ -18,7 +18,7 @@ namespace MVCTraining.Models
         public string? Status { get; set; }
         public string? Photopath { get; set; }
         public string? Comment { get; set; }
-        public double Latitude { get; set; }
-        public double Longitude { get; set; }
+        public double? Latitude { get; set; }
+        public double? Longitude { get; set; }
     }
 }

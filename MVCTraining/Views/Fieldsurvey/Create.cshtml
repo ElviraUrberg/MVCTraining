@@ -6,30 +6,46 @@
             <h2 class="text-primary">Skapa Nytt Objekt</h2>
             <hr />
         </div>
-        <select asp-for="Service" class="form-select mb-3" aria-label="Välj tjänst">
-            <option selected>Välj tjänst</option>
-            <option>Felanmälan</option>
-            <option>Besiktning</option>
-            <option>Demo</option>
-        </select>
-        <select asp-for="Area" class="form-select mb-3" aria-label="Välj område">
-            <option selected>Välj område</option>
-            <option>Norrköping</option>
-            <option>Söderköping</option>
-            <option>Linköping</option>
-        </select>
-        <select asp-for="Category" class="form-select mb-3" aria-label="Välj typ">
-            <option selected>Välj typ</option>
-            <option>Skadat räcke</option>
-            <option>Ojämn väg</option>
-            <option>Saknad skylt</option>
-            <option>Dålig vägmarkering</option>
-        </select>
-        <select asp-for="Status" class="form-select mb-3" aria-label="Välj status">
-            <option selected>Välj status</option>
-            <option>Ladda upp som ny</option>
-            <option>Ladda upp som publicerad</option>
-        </select>
+        <div class="mb-3">
+            <label asp-for="Service"></label>
+            <select asp-for="Service" class="form-select mb-3" aria-label="Välj tjänst">
+                <option selected disabled>Välj tjänst</option>
+                <option>Felanmälan</option>
+                <option>Besiktning</option>
+                <option>Demo</option>
+            </select>
+            <span asp-validation-for="Service" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Area"></label>
+            <select asp-for="Area" class="form-select mb-3" aria-label="Välj område">
+                <option selected disabled>Välj område</option>
+                <option>Norrköping</option>
+                <option>Söderköping</option>
+                <option>Linköping</option>
+            </select>
+            <span asp-validation-for="Area" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Category"></label>
+            <select asp-for="Category" class="form-select mb-3" aria-label="Välj typ">
+                <option selected disabled>Välj typ</option>
+                <option>Skadat räcke</option>
+                <option>Ojämn väg</option>
+                <option>Saknad skylt</option>
+                <option>Dålig vägmarkering</option>
+            </select>
+            <span asp-validation-for="Category" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Status"></label>
+            <select asp-for="Status" class="form-select mb-3" aria-label="Välj status">
+                <option selected disabled>Välj status</option>
+                <option>Ladda upp som ny</option>
+                <option>Ladda upp som publicerad</option>
+            </select>
+            <span asp-validation-for="Status" class="text-danger"></span>
+        </div>        
         <div class="mb-3">
             <label asp-for="Photopath"></label>
             <input asp-for="Photopath" class="form-control" />
@@ -52,13 +68,7 @@
         </div>
         <button type="submit" class="btn btn-primary" style="width:150px">Skapa</button>
         <a asp-controller="Fieldsurvey" asp-action="Index" class="btn btn-secondary" style="width:150px">
-            Back To List
+            Avbryt
         </a>
     </div>
 </form>
-
-@section Scripts{
-    @{
-        <partial name="_ValidationScriptsPartial" />
-    }
-}

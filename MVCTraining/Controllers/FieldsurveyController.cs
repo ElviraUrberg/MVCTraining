@@ -39,6 +39,14 @@ namespace MVCTraining.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Create(FieldSurvey obj)
         {
+            if (obj.Latitude == null)
+            {
+                obj.Latitude = 0;
+             }
+            if (obj.Longitude == null)
+            {
+                obj.Longitude = 0;
+            }
             if (ModelState.IsValid)
             {
                 _db.FieldSurveys.Add(obj);
@@ -70,6 +78,14 @@ namespace MVCTraining.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Edit(FieldSurvey obj)
         {
+            if (obj.Latitude == null)
+            {
+                obj.Latitude = 0;
+            }
+            if (obj.Longitude == null)
+            {
+                obj.Longitude = 0;
+            }
             if (ModelState.IsValid)
             {
                 var fieldsurvey = _db.FieldSurveys.Find(obj.Id);
@@ -77,7 +93,9 @@ namespace MVCTraining.Controllers
                 fieldsurvey.Category = obj.Category;
                 fieldsurvey.Area = obj.Area;
                 fieldsurvey.Photopath = obj.Photopath;
-                fieldsurvey.Comment = obj.Comment;                
+                fieldsurvey.Comment = obj.Comment; 
+                fieldsurvey.Latitude = obj.Latitude;
+                fieldsurvey.Longitude = obj.Longitude;
                 _db.SaveChanges();
                 return RedirectToAction("Index");
             }
